@@ -1,0 +1,58 @@
+fuckoff.bat
+
+@echo off
+echo Ctrl+C to stop.
+
+:loop
+:: Stop Search and Input Experience services (ignore errors if access denied)
+sc stop WSearch >nul 2>&1
+sc stop TextInputManagementService >nul 2>&1
+
+:: Terminate the annoying fuckers.
+for %%P in (
+    SearchApp.exe
+    SearchHost.exe
+    SearchUI.exe
+    SearchIndexer.exe
+    SearchProtocolHost.exe
+    SearchFilterHost.exe
+    TextInputHost.exe
+    InputApp.exe
+    msedgewebview2.exe
+    MicrosoftEdgeUpdate.exe
+) do (
+    taskkill /IM %%P /F >nul 2>&1
+)
+
+timeout /t 3 /nobreak >nul
+goto loop
+
+::timeout /t 3 /nobreak >nul, to change the close interval, in the above code, change the 3 to your specified number of seconds
+::also, you may need to run as admin as microsoft hates you closing touch service.
+
+
+
+
+fuckoffmini.bat
+
+@echo off
+:loop
+sc stop WSearch >nul 2>&1
+sc stop TextInputManagementService >nul 2>&1
+for %%P in (
+    SearchApp.exe
+    SearchHost.exe
+    SearchUI.exe
+    SearchIndexer.exe
+    SearchProtocolHost.exe
+    SearchFilterHost.exe
+    TextInputHost.exe
+    InputApp.exe
+    msedgewebview2.exe
+    MicrosoftEdgeUpdate.exe
+) do (
+    taskkill /IM %%P /F >nul 2>&1
+)
+cls
+timeout /t 3 /nobreak >nul
+goto loop
