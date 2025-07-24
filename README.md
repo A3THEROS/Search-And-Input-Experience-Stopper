@@ -1,5 +1,5 @@
 # Search-And-Input-Experience-Stopper
-Do you want to stop  the recourse intensive search and input experice task without editing registry? well fuckoff.bat is for you, its a looping .bat file that stops these tasks every 3 seconds:
+Do you want to stop the resource intensive search and input experice task without editing registry? well fuckoff.bat is for you, its a looping .bat file that stops these tasks every 3 seconds:
     
     SearchHost.exe
     SearchUI.exe
